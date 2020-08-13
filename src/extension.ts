@@ -113,10 +113,7 @@ export class OutputInfoCollector implements OutputChannel {
 
 export function activate(context: ExtensionContext): Promise<ExtensionAPI> {
 
-	let storagePath = context.storagePath;
-	if (!storagePath) {
-		storagePath = getTempWorkspace();
-	}
+	let storagePath = getTempWorkspace();
 	clientLogFile = path.join(storagePath, 'client.log');
 	initializeLogFile(clientLogFile);
 
